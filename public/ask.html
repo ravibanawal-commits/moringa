@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153d2d">
+    <meta name="description" content="Ask the Moringa Grove assistant about our orchard, moringa, and gallery.">
+    <title>Ask Me — Moringa Grove</title>
+    <link rel="icon" type="image/png" href="/moringa-mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/assistant-widget.css">
+    <script src="/ask.js" defer></script>
+    <script src="/assistant-widget.js" defer></script>
+    <script src="/translator.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Moringa Grove home">
+        <span class="brand-mark" aria-hidden="true"><img src="/moringa-mark.png" alt=""></span>
+        <span class="brand-copy"><strong>Moringa</strong><small>GROVE & ORCHARD</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-menu">
+            About Us <span class="nav-dropdown-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="about-menu">
+            <a href="/#about">Our orchard</a>
+            <a href="/#benefits">Why Moringa</a>
+            <a href="/#contact">Contact Us</a>
+          </div>
+        </div>
+        <a href="/gallery">Gallery</a>
+        <a class="nav-cta" href="/admin#login-panel">Admin Login <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="chat-page-hero">
+        <div class="wrap">
+          <span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> A little help from our grove</span>
+          <h1>Ask <em>Me.</em></h1>
+          <p>Questions about Moringa Grove? Start a conversation with our site assistant.</p>
+        </div>
+      </section>
+
+      <section class="chatbot-section wrap" aria-label="Moringa Grove assistant">
+        <div class="chatbot-layout">
+          <aside class="chatbot-intro">
+            <span class="eyebrow eyebrow-light">Here to help</span>
+            <h2>Let's talk about<br><em>the grove.</em></h2>
+            <p>Ask about our orchard, moringa, or photo gallery. If you need a personal reply, send our team an inquiry.</p>
+            <a class="chat-contact-link" href="/#contact">Contact the orchard team <span aria-hidden="true">↗</span></a>
+          </aside>
+
+          <section class="chat-window" aria-label="Chat conversation">
+            <header class="chat-window-header">
+              <img class="chat-avatar" src="/assistant-avatar.avif" alt="" aria-hidden="true" width="42" height="42">
+              <span><strong>Moringa Grove</strong><small>Site assistant</small></span>
+              <span class="chat-online"><span></span> Ready to help</span>
+            </header>
+            <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation">
+              <article class="chat-message" data-role="assistant">
+                <div class="chat-bubble"><p>Hi! I can help with questions about our orchard, moringa, and gallery. What would you like to know?</p></div>
+              </article>
+            </div>
+            <div class="chat-controls">
+              <p class="chat-suggestions-label">Try asking</p>
+              <div class="chat-suggestions" id="chat-suggestions">
+                <button type="button" data-question="What is moringa used for?">Moringa uses</button>
+                <button type="button" data-question="Tell me about your orchard">About the orchard</button>
+                <button type="button" data-question="Can I visit the farm?">Plan a visit</button>
+              </div>
+              <form class="chat-form" id="chat-form">
+                <label class="visually-hidden" for="chat-input">Type your question</label>
+                <input id="chat-input" name="question" type="text" maxlength="500" autocomplete="off" placeholder="Type your question..." required>
+                <button class="button button-lime chat-send" type="submit">Send <span aria-hidden="true">↗</span></button>
+              </form>
+              <p class="chat-disclaimer">This assistant shares general site information, not medical advice.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-top">
+        <a class="brand brand-footer" href="/" aria-label="Moringa Grove home">
+          <span class="brand-mark" aria-hidden="true"><img src="/moringa-mark.png" alt=""></span>
+          <span class="brand-copy"><strong>Moringa</strong><small>GROVE & ORCHARD</small></span>
+        </a>
+        <p>Good things grow when we grow them together.</p>
+        <a class="footer-top-link" href="/">Back to home ↑</a>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© <span id="year"></span> Moringa Grove. All rights reserved.</span>
+        <div><a href="/">Home</a><a href="/gallery">Gallery</a><a href="/ask">Ask Me</a><a href="/#contact">Contact</a></div>
+        <span>Grown with care, shared with purpose.</span>
+      </div>
+    </footer>
+  </body>
+</html>

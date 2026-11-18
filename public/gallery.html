@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153d2d">
+    <meta name="description" content="Explore photos from the Moringa Grove orchard and plantation.">
+    <title>Orchard Gallery — Moringa Grove</title>
+    <link rel="icon" type="image/png" href="/moringa-mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/assistant-widget.css">
+    <script src="/gallery.js" defer></script>
+    <script src="/assistant-widget.js" defer></script>
+    <script src="/translator.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Moringa Grove home">
+        <span class="brand-mark" aria-hidden="true"><img src="/moringa-mark.png" alt=""></span>
+        <span class="brand-copy"><strong>Moringa</strong><small>GROVE & ORCHARD</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-menu">
+            About Us <span class="nav-dropdown-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="about-menu">
+            <a href="/#about">Our orchard</a>
+            <a href="/#benefits">Why Moringa</a>
+            <a href="/#contact">Contact Us</a>
+          </div>
+        </div>
+        <a class="nav-cta" href="/admin#login-panel">Admin Login <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main>
+      <section class="gallery-page-hero">
+        <div class="wrap">
+          <span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> A glimpse of the grove</span>
+          <h1>Life on the<br><em>land.</em></h1>
+          <p>Little moments from our orchard, shared by the people who grow here.</p>
+        </div>
+      </section>
+      <section class="wrap gallery-page-section" aria-label="Orchard photo gallery">
+        <div class="gallery-page-heading"><span class="eyebrow">The photo journal</span><span id="media-count">0 ITEMS</span></div>
+        <div class="gallery-page-grid" id="gallery-grid"></div>
+        <div class="gallery-empty gallery-page-empty" id="gallery-empty" role="status">Our photo journal is just getting started. Check back soon to see life in the grove.</div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-top">
+        <a class="brand brand-footer" href="/" aria-label="Moringa Grove home">
+          <span class="brand-mark" aria-hidden="true"><img src="/moringa-mark.png" alt=""></span>
+          <span class="brand-copy"><strong>Moringa</strong><small>GROVE & ORCHARD</small></span>
+        </a>
+        <p>Good things grow when we grow them together.</p>
+        <a class="footer-top-link" href="/">Back to home ↑</a>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© <span id="year"></span> Moringa Grove. All rights reserved.</span>
+        <div><a href="/">Home</a><a href="/#benefits">Why moringa</a><a href="/ask">Ask Me</a><a href="/#contact">Contact</a><a href="/admin">Admin</a></div>
+        <span>Grown with care, shared with purpose.</span>
+      </div>
+    </footer>
+  </body>
+</html>

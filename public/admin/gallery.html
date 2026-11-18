@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="theme-color" content="#153d2d">
+    <title>Manage Gallery — Moringa Grove</title>
+    <link rel="icon" type="image/png" href="/moringa-mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin.css">
+    <link rel="stylesheet" href="/assistant-widget.css">
+    <script src="/gallery-admin.js" defer></script>
+    <script src="/assistant-widget.js" defer></script>
+    <script src="/translator.js" defer></script>
+  </head>
+  <body>
+    <header class="admin-header">
+      <a class="brand" href="/" aria-label="Moringa Grove homepage"><span class="brand-mark" aria-hidden="true"><img src="/moringa-mark.png" alt=""></span><span><strong>Moringa Grove</strong><small>GALLERY ADMIN</small></span></a>
+      <div class="gallery-header-links"><a class="back-link" href="/admin">← Content editor</a><a class="back-link" href="/gallery">View gallery ↗</a></div>
+    </header>
+    <main class="admin-main">
+      <section class="login-panel" id="login-panel">
+        <span class="eyebrow">Site administration</span>
+        <h1>Sign in to continue.</h1>
+        <p>Use your administrator account to manage orchard photos. For first-time setup, set the admin username and password in `.env`, then restart the server.</p>
+        <form id="login-form">
+          <label>Username<input name="username" autocomplete="username" required></label>
+          <label>Password
+            <span class="password-field">
+              <input name="password" type="password" autocomplete="current-password" required>
+              <button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">
+                <svg class="password-eye-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="password-eye-closed" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3l18 18M10.6 6.2A10.7 10.7 0 0 1 12 6c6.4 0 10 6 10 6a14.8 14.8 0 0 1-3.2 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 6 10 6a10.7 10.7 0 0 0 4.1-.8"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+            </span>
+          </label>
+          <div class="captcha-row">
+            <img class="captcha-image" alt="CAPTCHA security code">
+            <button class="captcha-refresh" type="button" aria-label="Refresh CAPTCHA code">Refresh <span aria-hidden="true">↻</span></button>
+          </div>
+          <label class="captcha-answer">CAPTCHA code<input name="captchaCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="5" required></label>
+          <input name="captchaId" type="hidden">
+          <label class="remember-me"><input name="rememberMe" type="checkbox"> Remember me</label>
+          <button class="forgot-password" id="forgot-password" type="button">Forgot password?</button>
+          <button type="submit">Sign in <span>↗</span></button>
+          <p class="status" id="login-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="editor gallery-editor" id="gallery-editor" hidden>
+        <div class="editor-heading">
+          <div><span class="eyebrow">Orchard photo journal</span><h1>Manage your gallery.</h1><p>Upload photos here to publish them on the homepage and public gallery.</p></div>
+          <button class="logout-button" id="logout-button" type="button">Sign out</button>
+        </div>
+        <section class="editor-card upload-card">
+          <div class="card-title"><div><span class="step">01</span><h2>Add gallery photos and clips</h2></div><p>Photos: JPG, PNG, or WebP up to 5 MB · Clips: MP4 or WebM up to 25 MB · 5 files per upload</p></div>
+          <form id="upload-form">
+            <div class="upload-picker">
+              <input id="media-files" name="photos" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm" multiple aria-label="Select gallery photos and clips">
+              <label class="browse-button" for="media-files">Choose photos or clips <span aria-hidden="true">↗</span></label>
+              <p>Select up to 5 files, with no more than one video clip per upload.</p>
+            </div>
+            <p class="upload-selection" id="upload-selection">No files selected yet.</p>
+            <div class="upload-submit"><button class="save-button" type="submit">Upload to website <span>↗</span></button><p class="status" id="upload-status" role="status" aria-live="polite"></p></div>
+          </form>
+        </section>
+        <section class="editor-card">
+          <div class="card-title"><div><span class="step">02</span><h2>Published gallery items</h2></div><p>Remove an item here to take it off the homepage and gallery page.</p></div>
+          <div class="uploaded-grid" id="uploaded-grid"></div>
+          <p class="gallery-admin-empty" id="gallery-admin-empty">No gallery items uploaded yet. Choose photos or clips above to get started.</p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
